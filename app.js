@@ -20,15 +20,6 @@ app.use(
     credentials: true,
   })
 );
-
-app.options(
-  "*",
-  cors({
-    origin:
-      "https://filadelfia-neiva-frontendfn-zkn2pg-361f50-165-227-180-87.traefik.me",
-    credentials: true,
-  })
-);
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
