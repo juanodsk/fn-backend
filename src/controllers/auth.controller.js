@@ -28,7 +28,10 @@ export const register = async (req, res) => {
       id: usuarioSaved._id,
       rol: usuarioSaved.rol,
     });
-    res.cookie("token", token);
+    res.cookie("token", token, {
+      httpOnly: true,
+      sameSite: "None",
+    });
     res.json({
       id: usuarioSaved._id,
       nombres: usuarioSaved.nombres,
@@ -80,7 +83,10 @@ export const login = async (req, res) => {
       id: usuarioFound._id,
       rol: usuarioFound.rol,
     });
-    res.cookie("token", token);
+    res.cookie("token", token, {
+      httpOnly: true,
+      sameSite: "None", // Asegura que la cookie no sea accesible desde JavaScript
+    });
     res.json({
       id: usuarioFound._id,
       nombres: usuarioFound.nombres,
