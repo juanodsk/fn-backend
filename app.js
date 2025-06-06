@@ -15,7 +15,8 @@ import cookieParser from "cookie-parser";
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin:
+      "https://filadelfia-neiva-frontendfn-zkn2pg-361f50-165-227-180-87.traefik.me/",
     credentials: true,
   })
 );
